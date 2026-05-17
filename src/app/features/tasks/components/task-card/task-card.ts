@@ -11,9 +11,13 @@ import { FormsModule } from '@angular/forms';
 export class TaskCard {
   task = input<Task>({} as Task);
   onToggle = output<{ _id: string; completed: boolean }>();
-
+  onDelete = output<{ _id: string}>();
   toggle() {
     // send as it is ( send current object)
     this.onToggle.emit({ _id: this.task()._id!, completed: this.task().completed! });
+  }
+  
+  deleteTask() {
+    this.onDelete.emit({ _id: this.task()._id!});
   }
 }

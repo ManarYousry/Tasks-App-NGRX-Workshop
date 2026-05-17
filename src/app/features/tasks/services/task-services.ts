@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class TaskServices {
   //
-  private baseUrl = 'https://lf7z92-3000.csb.app/tasks';
+  private baseUrl = 'https://gsvfks-3000.csb.app/tasks';  //'https://lf7z92-3000.csb.app/tasks';
   //
   private _httpClient = inject(HttpClient);
   //

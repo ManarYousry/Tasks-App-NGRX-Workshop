@@ -1,7 +1,7 @@
 <div class="mt-4 space-y-3">
   @if ((tasks$ | async)?.length) {
     @for (task of tasks$ | async; track task._id) {
-      <app-task-card [task]="task" (onToggle)="onToggleTask($event)" />
+      <app-task-card [task]="task" (onToggle)="onToggleTask($event)"    (onDelete)="deleteTask($event)" />
     }
   } @else {
     <div class="flex flex-col items-center justify-center py-10 text-gray-400">

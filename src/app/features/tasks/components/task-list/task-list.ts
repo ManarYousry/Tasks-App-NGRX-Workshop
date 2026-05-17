@@ -32,6 +32,11 @@ export class TaskList implements OnInit {
     this._store.dispatch(TaskActions.toggleTask({ _id: taskId, currCompleted: completed }));
   }
 
+    deleteTask(event: any) {
+    const taskId = event._id;
+    this._store.dispatch(TaskActions.deleteTask({ _id: taskId}));
+  }
+
   // ---- Life Cycles Methods ----
   ngOnInit(): void {
     this.loadTasks();

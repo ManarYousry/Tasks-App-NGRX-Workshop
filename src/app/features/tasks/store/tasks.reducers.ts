@@ -32,6 +32,26 @@ export const tasksReducer = createReducer(
     isLoading: false,
     tasks: updateTaskList(state.tasks, task),
   })),
+   on(TaskActions.createTask, (state) => ({
+    ...state,
+    isLoading: true,
+  })),
+
+ on(TaskActions.createTaskSuccess, (state, { task }) => ({
+  ...state,
+  tasks: [...state.tasks, task],
+  isLoading: false,
+})),
+   on(TaskActions.deleteTask, (state) => ({
+    ...state,
+    isLoading: true,
+  })),
+
+ on(TaskActions.deleteTaskSuccess, (state, { _id }) => ({
+  ...state,
+  tasks: state.tasks.filter(task => task._id !== _id),
+  isLoading: false,
+})),
 
   on(TaskActions.setFilter, (state, { filter }) => ({
     ...state,

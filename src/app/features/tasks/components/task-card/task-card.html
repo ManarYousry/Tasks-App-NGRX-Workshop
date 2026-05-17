@@ -31,12 +31,12 @@
           {{ task().completed ? 'Done' : 'Pending' }}
         </span>
 
-        <!-- <button
+        <button
         class="opacity-0 group-hover:opacity-100 transition-opacity"
-        (click)="delete.emit(task())"
+        (click)="deleteTask()"
       >
         <i class="pi pi-trash text-red-500 hover:text-red-600"></i>
-      </button> -->
+      </button>
       </div>
     </div>
   </div>
